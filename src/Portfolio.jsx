@@ -11,27 +11,34 @@ import { Link } from "react-router-dom";
 ============================================================ */
 const EXPERIENCES = [
   {
+    company: "Hack4Impact UTK",
+    title: "Software Developer",
+    period: "October 2025 — Present",
+    bullets: [
+      "Developed automated data-processing pipelines and integrated KPI calculations to deliver continuous, real-time reporting and actionable insights for transit operations.",
+      "Developed responsive Next.js + TypeScript interfaces connected to backend APIs and PostgreSQL for real-time visualization.",
+      "Database optimization: Streamlined data workflows using Drizzle ORM, improving query performance and pipeline reliability.",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS", "Git"],
+  },
+
+  {
     company: "Digit7",
-    title: "Backend Developer Intern",
+    title: "Software Engineer Intern (Backend and Computer Vision)",
     period: "Jun 2024 — Aug 2024",
     bullets: [
+
       "Built FastAPI microservices with JWT auth and role-based access.",
-      "Designed MongoDB pipelines; reduced query latencies by ~35%.",
+      "Designed MongoDB pipelines; reduced query latencies",
       "Dockerized services and CI workflows; deployed to Azure.",
+      "Built a color detection model independent of lighting using OpenCV and Lab color space, achieving 97% accuracy on the test dataset",
+      "Enhanced image quality with CLAHE preprocessing and integrated edge detection, improving classification recall by 12%",
+      "Applied advanced edge detection and image segmentation techniques to strengthen boundary recognition and increase overall model robustness",
+
     ],
-    tech: ["FastAPI", "MongoDB", "Docker", "Azure", "PyTest"],
+    tech: ["Python","FastAPI", "MongoDB", "Docker", "Azure", "PyTest"],
   },
-  {
-    company: "Freelance",
-    title: "Automation Engineer",
-    period: "May 2025 — Jul 2025",
-    bullets: [
-      "Python + Zapier pipeline to parse bank statements.",
-      "Auto-matched check deposits to QuickBooks invoices.",
-      "Slack approvals; cut manual bookkeeping by 60%.",
-    ],
-    tech: ["Python", "Zapier", "QuickBooks", "Slack API"],
-  },
+
   {
     company: "UTK — Research",
     title: "Undergrad Research Assistant",
@@ -43,6 +50,30 @@ const EXPERIENCES = [
     ],
     tech: ["Python", "NumPy", "SciPy", "Matplotlib"],
   },
+
+  {
+    company: "Academy Sports + Outdoors",
+    title: "Fullfillment Associate",
+    period: "Apr 2022 — Dec 2022",
+    bullets: [
+      "Optimized warehouse logistics, increasing operational efficiency",
+      "Utilized Excel to manage inventory and track inventory for over 10,000 SKUs, resulting in reduction of misplacement in inventory managment",
+      "Assisted in training new employees on warehouse procedures and safety protocols, contributing to a safer and more efficient work environment",
+    ],
+    tech: ["Excel", "Inventory Management"," Teamwork"," Communication","Problem-Solving"],
+  },
+
+  {
+    company: "Baskin Robbins",
+    title: "Sales Associate",
+    period: "Jan 2022 — Apr 2022",
+    bullets: [
+      "Scooped and served ice cream to customers while communicating effectively to ensure customer satisfaction",
+      "Handled cash register transactions accurately and efficiently, maintaining a balanced cash drawer",
+    ],
+    tech: ["Teamwork"," Communication"],
+  },
+
 ];
 
 /* ----------------------------------------------
