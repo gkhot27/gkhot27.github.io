@@ -31,16 +31,23 @@ export const projects = {
       img: "/projects/backend/chat-service.webp",
       github: "https://github.com/gkhot27/Digit7/tree/main/src/gender"
     },
+    {
+      title: "Highheat",
+      desc: "JWT auth + WebSockets + MongoDB + Docker on EC2.",
+      img: "/projects/backend/chat-service.webp",
+      github: "https://github.com/gkhot27/Digit7/tree/main/src/gender"
+    }
     // Add more...
   ],
 
   machineLearning: [
     {
-      title: "Churn w/ SHAP",
-      desc: "Feature engineering + model compare (LogReg/RF/XGB) + SHAP.",
+      title: "Retinal optical coherence tomography",
+      desc: "Image classification model using CNN to detect retinal diseases.",
       img: "/projects/machine-learning/churn-shap.webp",
-      github: "https://github.com/yourname/churn-shap"
+      github: "https://github.com/gkhot27/Retinal_OCT_project/blob/main/retinal_oct_cnn_converted(works).ipynb"
     },
+
     // Add more...
   ],
 
