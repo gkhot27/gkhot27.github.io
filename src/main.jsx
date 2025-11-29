@@ -6,10 +6,12 @@ import Portfolio from './Portfolio.jsx'
 // NEW: router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import GlitchMessagePage from './GlitchMessagePage.jsx'
+import Journal from './Journal.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Portfolio /> },
-  { path: '/glitch', element: <GlitchMessagePage /> }, // <— the new page
+  { path: '/glitch', element: <GlitchMessagePage /> },
+  { path: '/journal', element: <Journal /> },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

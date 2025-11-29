@@ -332,6 +332,7 @@ function Navbar({ onOpenResume }) {
           <button onClick={() => scrollToId("about")} className="hover:text-white/80">About</button>
           <button onClick={() => scrollToId("experience")} className="hover:text-white/80">Experience</button>
           <button onClick={() => scrollToId("projects")} className="hover:text-white/80">Projects</button>
+          <Link to="/journal" className="hover:text-white/80">Journal</Link>
           <button onClick={() => scrollToId("contact")} className="hover:text-white/80">Contact</button>
           <Link to="/glitch" className="px-3 py-1 rounded-md border border-white/20 hover:border-white/40">Connect with me</Link>
           <button onClick={onOpenResume} className="px-3 py-1 rounded-md border border-white/20 hover:border-white/40">Resume</button>
