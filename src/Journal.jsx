@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { journalEntries } from "./data/journal.data";
+import { journalEntries } from "./data/journal.data.jsx";
 
 function GlitchCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -247,7 +247,7 @@ export default function Journal() {
       </section>
 
       <footer className="py-10 text-center text-white/50 text-xs border-t border-white/10">
-        © {new Date().getFullYear()} Gururaj Khot — Journal
+        (c) {new Date().getFullYear()} Gururaj Khot - Journal
       </footer>
     </div>
   );

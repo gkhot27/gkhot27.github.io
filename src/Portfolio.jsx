@@ -1,4 +1,4 @@
-// Portfolio.jsx — About-first layout with Experience tab + Experience Slider w/ “Indian man” buttons
+// Portfolio.jsx - About-first layout with Experience tab + Experience Slider w/ "Indian man" buttons
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
@@ -13,7 +13,7 @@ const EXPERIENCES = [
   {
     company: "Hack4Impact UTK",
     title: "Software Developer",
-    period: "October 2025 — Present",
+    period: "October 2025 - Present",
     bullets: [
       "Developed automated data-processing pipelines and integrated KPI calculations to deliver continuous, real-time reporting and actionable insights for transit operations.",
       "Developed responsive Next.js + TypeScript interfaces connected to backend APIs and PostgreSQL for real-time visualization.",
@@ -25,7 +25,7 @@ const EXPERIENCES = [
   {
     company: "Digit7",
     title: "Software Engineer Intern (Backend and Computer Vision)",
-    period: "Jun 2024 — Aug 2024",
+    period: "Jun 2024 - Aug 2024",
     bullets: [
 
       "Built FastAPI microservices with JWT auth and role-based access.",
@@ -40,9 +40,9 @@ const EXPERIENCES = [
   },
 
   {
-    company: "UTK — Research",
+    company: "UTK - Research",
     title: "Undergrad Research Assistant",
-    period: "Jan 2025 — Present",
+    period: "Jan 2025 - Present",
     bullets: [
       "Explored signal processing to reduce mastitis detection time.",
       "Preprocessed datasets, ran ML experiments, plotted metrics.",
@@ -54,7 +54,7 @@ const EXPERIENCES = [
   {
     company: "Academy Sports + Outdoors",
     title: "Fullfillment Associate",
-    period: "Apr 2022 — Dec 2022",
+    period: "Apr 2022 - Dec 2022",
     bullets: [
       "Optimized warehouse logistics, increasing operational efficiency",
       "Utilized Excel to manage inventory and track inventory for over 10,000 SKUs, resulting in reduction of misplacement in inventory managment",
@@ -66,7 +66,7 @@ const EXPERIENCES = [
   {
     company: "Baskin Robbins",
     title: "Sales Associate",
-    period: "Jan 2022 — Apr 2022",
+    period: "Jan 2022 - Apr 2022",
     bullets: [
       "Scooped and served ice cream to customers while communicating effectively to ensure customer satisfaction",
       "Handled cash register transactions accurately and efficiently, maintaining a balanced cash drawer",
@@ -505,16 +505,16 @@ const backendProjects = [
 // ---- Deep Learning projects data ----
 const deepLearningProjects = [
   {
-    title: "Real‑time Object Detection (OpenCV + YOLO)",
+    title: "Real-time Object Detection (OpenCV + YOLO)",
     description:
       "Streaming webcam inference with async preprocessing, custom NMS, and a lightweight metrics panel.",
     stack: ["Python", "PyTorch", "YOLO", "OpenCV"],
     link: "https://github.com/yourusername/realtime-yolo-opencv", // <- repo or demo URL
   },
   {
-    title: "Pac‑Man Agent (Reinforcement Learning)",
+    title: "Pac-Man Agent (Reinforcement Learning)",
     description:
-      "DQN‑style agent with replay buffer, epsilon‑greedy exploration, and target network updates.",
+      "DQN-style agent with replay buffer, epsilon-greedy exploration, and target network updates.",
     stack: ["Python", "RL", "PyGame", "NumPy"],
     link: "https://github.com/yourusername/pacman-dqn", // <- repo or demo URL
   },
@@ -526,13 +526,13 @@ const machineLearningProjects = [
     title: "Churn Prediction",
     description:
       "Feature engineering + model comparison (LogReg, RandomForest, XGBoost) with SHAP explainability.",
-    stack: ["Python", "scikit‑learn", "XGBoost", "SHAP"],
+    stack: ["Python", "scikit-learn", "XGBoost", "SHAP"],
     link: "https://github.com/yourusername/churn-prediction", // <- repo or demo URL
   },
   {
-    title: "Time‑Series Forecasting",
+    title: "Time-Series Forecasting",
     description:
-      "Seasonal decomposition, Prophet baseline, and LightGBM for competitive short‑term forecasts.",
+      "Seasonal decomposition, Prophet baseline, and LightGBM for competitive short-term forecasts.",
     stack: ["Pandas", "Prophet", "LightGBM"],
     link: "https://github.com/yourusername/ts-forecasting", // <- repo or demo URL
   },
@@ -609,7 +609,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Hi, I'm <span className="text-cyan-300">Gururaj Khot</span> —
+              Hi, I'm <span className="text-cyan-300">Gururaj Khot</span> -
               <br className="hidden md:block" />
               I build <span className="text-violet-300">backend systems</span> & craft <span className="text-emerald-300">ML/DL</span> solutions.
             </h1>
@@ -656,162 +656,155 @@ export default function Portfolio() {
           </button>
           <button type="button" onClick={() => scrollToId("computer-vision")} className="group p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition text-left">
             <div className="text-amber-300 font-semibold">Computer Vision</div>
-            <p className="text-sm text-white/70 mt-2">Lighting‑robust color detection, edges, segmentation.</p>
+            <p className="text-sm text-white/70 mt-2">Lighting-robust color detection, edges, segmentation.</p>
             <div className="mt-4 text-xs text-white/50 group-hover:text-white/80">Jump to section →</div>
           </button>
         </div>
       </Section>
 
       {/* ====== DEEP LEARNING ====== */}
-{/* ====== DEEP LEARNING (with links) ====== */}
-<Section id="deep-learning" title="Deep Learning" subtitle="Selected experiments & demos">
-  <div className="grid md:grid-cols-2 gap-6">
-    {deepLearningProjects.map((proj, idx) => (
-      <div
-        key={idx}
-        className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
-      >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-semibold">{proj.title}</h3>
-          {proj.link && (
-            <a
-              href={proj.link}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
-              title="Open project"
+      <Section id="deep-learning" title="Deep Learning" subtitle="Selected experiments & demos">
+        <div className="grid md:grid-cols-2 gap-6">
+          {deepLearningProjects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
             >
-              View <ExternalLinkIcon />
-            </a>
-          )}
-        </div>
-        <p className="text-sm text-white/70 mt-2">{proj.description}</p>
-        <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
-          {proj.stack.map((s) => (
-            <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
-              {s}
-            </span>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-semibold">{proj.title}</h3>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
+                    title="Open project"
+                  >
+                    View <ExternalLinkIcon />
+                  </a>
+                )}
+              </div>
+              <p className="text-sm text-white/70 mt-2">{proj.description}</p>
+              <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
+                {proj.stack.map((s) => (
+                  <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-    ))}
-  </div>
-</Section>
-
+      </Section>
 
       {/* ====== BACKEND DEV ====== */}
-     {/* ====== BACKEND DEV (with links) ====== */}
-<Section id="backend" title="Backend Development" subtitle="APIs, data, and infra">
-  <div className="grid md:grid-cols-2 gap-6">
-    {backendProjects.map((proj, idx) => (
-      <div
-        key={idx}
-        className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
-      >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-semibold">{proj.title}</h3>
-          {proj.link && (
-            <a
-              href={proj.link}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
-              title="Open project"
+      <Section id="backend" title="Backend Development" subtitle="APIs, data, and infra">
+        <div className="grid md:grid-cols-2 gap-6">
+          {backendProjects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
             >
-              View <ExternalLinkIcon />
-            </a>
-          )}
-        </div>
-        <p className="text-sm text-white/70 mt-2">{proj.description}</p>
-        <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
-          {proj.stack.map((s) => (
-            <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
-              {s}
-            </span>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-semibold">{proj.title}</h3>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
+                    title="Open project"
+                  >
+                    View <ExternalLinkIcon />
+                  </a>
+                )}
+              </div>
+              <p className="text-sm text-white/70 mt-2">{proj.description}</p>
+              <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
+                {proj.stack.map((s) => (
+                  <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-    ))}
-  </div>
-</Section>
-
+      </Section>
 
       {/* ====== MACHINE LEARNING ====== */}
-{/* ====== MACHINE LEARNING (with links) ====== */}
-<Section id="machine-learning" title="Machine Learning" subtitle="Classical, pragmatic ML">
-  <div className="grid md:grid-cols-2 gap-6">
-    {machineLearningProjects.map((proj, idx) => (
-      <div
-        key={idx}
-        className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
-      >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-semibold">{proj.title}</h3>
-          {proj.link && (
-            <a
-              href={proj.link}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
-              title="Open project"
+      <Section id="machine-learning" title="Machine Learning" subtitle="Classical, pragmatic ML">
+        <div className="grid md:grid-cols-2 gap-6">
+          {machineLearningProjects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
             >
-              View <ExternalLinkIcon />
-            </a>
-          )}
-        </div>
-        <p className="text-sm text-white/70 mt-2">{proj.description}</p>
-        <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
-          {proj.stack.map((s) => (
-            <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
-              {s}
-            </span>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-semibold">{proj.title}</h3>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
+                    title="Open project"
+                  >
+                    View <ExternalLinkIcon />
+                  </a>
+                )}
+              </div>
+              <p className="text-sm text-white/70 mt-2">{proj.description}</p>
+              <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
+                {proj.stack.map((s) => (
+                  <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-    ))}
-  </div>
-</Section>
-
+      </Section>
 
       {/* ====== COMPUTER VISION ====== */}
-{/* ====== COMPUTER VISION (with links) ====== */}
-<Section
-  id="computer-vision"
-  title="Computer Vision"
-  subtitle="Lighting‑robust color detection, segmentation, edges, differencing"
->
-  <div className="grid md:grid-cols-2 gap-6">
-    {computerVisionProjects.map((proj, idx) => (
-      <div
-        key={idx}
-        className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
+      <Section
+        id="computer-vision"
+        title="Computer Vision"
+        subtitle="Lighting-robust color detection, segmentation, edges, differencing"
       >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-semibold">{proj.title}</h3>
-          {proj.link && (
-            <a
-              href={proj.link}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
-              title="Open project"
+        <div className="grid md:grid-cols-2 gap-6">
+          {computerVisionProjects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
             >
-              View <ExternalLinkIcon />
-            </a>
-          )}
-        </div>
-        <p className="text-sm text-white/70 mt-2">{proj.description}</p>
-        <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
-          {proj.stack.map((s) => (
-            <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
-              {s}
-            </span>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-semibold">{proj.title}</h3>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
+                    title="Open project"
+                  >
+                    View <ExternalLinkIcon />
+                  </a>
+                )}
+              </div>
+              <p className="text-sm text-white/70 mt-2">{proj.description}</p>
+              <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
+                {proj.stack.map((s) => (
+                  <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-    ))}
-  </div>
-</Section>
+      </Section>
 
 {/* ====== CONTACT — EMAIL (Web3Forms) ====== */}
 <Section id="contact" title="Contact" subtitle="Send a message! I would love to connect with you, it could be something professional or casual. I love talking with new people!">
@@ -895,9 +888,9 @@ export default function Portfolio() {
 
 <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
 
-<footer className="py-10 text-center text-white/50 text-xs border-t border-white/10">
-  © {new Date().getFullYear()} Gururaj Khot — Built with React, R3F, and Tailwind
-</footer>
+      <footer className="py-10 text-center text-white/50 text-xs border-t border-white/10">
+        (c) {new Date().getFullYear()} Gururaj Khot - Built with React, R3F, and Tailwind
+      </footer>
     </div>
   );
 }
