@@ -4,11 +4,11 @@ import './index.css'
 import Portfolio from './Portfolio.jsx'
 
 // NEW: router
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import GlitchMessagePage from './GlitchMessagePage.jsx'
 import Journal from './Journal.jsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { path: '/', element: <Portfolio /> },
   { path: '/glitch', element: <GlitchMessagePage /> },
   { path: '/journal', element: <Journal /> },

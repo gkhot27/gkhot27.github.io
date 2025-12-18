@@ -28,13 +28,13 @@ export const projects = {
     {
       title: "FastAPI API",
       desc: "JWT auth + WebSockets + MongoDB + Docker on EC2.",
-      img: "/projects/backend/chat-service.webp",
+      img: "/projects/backend/chat-services.webp",
       github: "https://github.com/gkhot27/Digit7/tree/main/src/gender"
     },
     {
       title: "Highheat",
       desc: "JWT auth + WebSockets + MongoDB + Docker on EC2.",
-      img: "/projects/backend/chat-service.webp",
+      img: "/projects/backend/chat-services.webp",
       github: "https://github.com/gkhot27/Digit7/tree/main/src/gender"
     }
     // Add more...
