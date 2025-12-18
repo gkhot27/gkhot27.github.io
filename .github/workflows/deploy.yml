@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ https://gkhot27-github-io.onrender.com }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
