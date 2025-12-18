@@ -63,6 +63,86 @@ const categoryColors = {
   "Learning": "from-pink-500/20 to-pink-600/20 border-pink-400/30 text-pink-300",
 };
 
+function ScraperTool() {
+  const [url, setUrl] = useState("");
+  const [summary, setSummary] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSummarize = async (e) => {
+    e.preventDefault();
+    if (!url) return;
+
+    setLoading(true);
+    setError("");
+    setSummary("");
+
+    try {
+      const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const response = await fetch(`${backendUrl}/api/summarize`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setSummary(data.summary);
+      } else {
+        setError(data.error || "Something went wrong. Make sure the backend is running.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the backend. Please ensure the server is running on localhost:5000.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="mt-6 p-4 rounded-xl bg-black/40 border border-white/10">
+      <form onSubmit={handleSummarize} className="flex flex-col gap-3">
+        <label className="text-xs font-medium text-white/60 uppercase tracking-wider">
+          Paste any link to summarize
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="https://example.com"
+            className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500/50 outline-none text-sm transition"
+            required
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="px-6 py-2 rounded-lg bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition disabled:opacity-50"
+          >
+            {loading ? "Summarizing..." : "Summarize"}
+          </button>
+        </div>
+      </form>
+
+      {error && (
+        <p className="mt-3 text-xs text-red-400/90 bg-red-400/10 p-2 rounded-md border border-red-400/20">
+          {error}
+        </p>
+      )}
+
+      {summary && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-4 p-4 rounded-lg bg-cyan-500/5 border border-cyan-400/20"
+        >
+          <h4 className="text-xs font-semibold text-cyan-300 uppercase tracking-wider mb-2">Summary</h4>
+          <p className="text-sm text-white/90 leading-relaxed italic">"{summary}"</p>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
 function JournalCard({ entry, index }) {
   const bgGradient = categoryColors[entry.category] || "from-cyan-500/20 to-cyan-600/20 border-cyan-400/30 text-cyan-300";
   
@@ -93,6 +173,8 @@ function JournalCard({ entry, index }) {
           </span>
         ))}
       </div>
+
+      {entry.id === "ai-scraper" && <ScraperTool />}
     </motion.article>
   );
 }

@@ -1,5 +1,13 @@
 export const journalEntries = [
   {
+    date: "December 17, 2025",
+    title: "AI Web Scraper & Summarizer",
+    category: "Machine Learning",
+    content: `Experimenting with LLM-powered web scraping. I've built a small tool that takes any URL, scrapes the main content, and uses an LLM to generate a concise one-sentence summary. It's a great way to quickly understand what a page is about without reading the whole thing. Try it out below!`,
+    tags: ["LLM", "Web Scraping", "AI", "Node.js"],
+    id: "ai-scraper"
+  },
+  {
     date: "November 29, 2025",
     title: "Building a Portfolio with React & Three.js",
     category: "Development",
