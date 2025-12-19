@@ -9,15 +9,19 @@ dotenv.config();
 
 const app = express();
 
-// Update CORS to allow your portfolio domain and local development
+// Update CORS to allow your portfolio domain, local development, and Render
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://gkhot27.github.io' // Replace with your actual GitHub Pages URL if different
+  'https://gkhot27.github.io',
+  'https://gkhot27-github-io.onrender.com' // Render backend URL (if different, update this)
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -26,6 +30,11 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+// Health check endpoint for Render
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
