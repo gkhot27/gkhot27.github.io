@@ -3,7 +3,7 @@ services:
     name: portfolio-backend
     env: node
     plan: free
-    rootDir: server
+    rootDir: src
     buildCommand: npm install
     startCommand: npm start
     envVars:
