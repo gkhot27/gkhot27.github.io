@@ -85,14 +85,25 @@ function ScraperTool() {
         body: JSON.stringify({ url }),
       });
 
-      const data = await response.json();
-      if (response.ok) {
-        setSummary(data.summary);
-      } else {
-        setError(data.error || "Something went wrong. Make sure the backend is running.");
+      if (!response.ok) {
+        // Try to get error message from response
+        let errorMessage = "Something went wrong. Make sure the backend is running.";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorMessage;
+        } catch (e) {
+          errorMessage = `Server error: ${response.status} ${response.statusText}`;
+        }
+        setError(errorMessage);
+        return;
       }
+
+      const data = await response.json();
+      setSummary(data.summary);
     } catch (err) {
-      setError("Failed to connect to the backend. Please ensure the server is running on localhost:5000.");
+      console.error("Fetch error:", err);
+      const errorMessage = err.message || "Failed to connect to the backend. Please ensure the server is running on localhost:5000.";
+      setError(`${errorMessage} (Check console for details)`);
     } finally {
       setLoading(false);
     }

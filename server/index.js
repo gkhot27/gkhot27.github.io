@@ -13,7 +13,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'https://gkhot27.github.io',
-  'https://gkhot27-github-io.onrender.com' // Render backend URL (if different, update this)
+  'https://gkhot27-github-io-2.onrender.com' // Render backend URL (if different, update this)
 ];
 
 app.use(cors({

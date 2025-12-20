@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_API_URL: https://gkhot27-github-io.onrender.com
+          VITE_API_URL: https://gkhot27-github-io-2.onrender.com
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
