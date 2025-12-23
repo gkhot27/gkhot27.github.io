@@ -78,7 +78,15 @@ function ScraperTool() {
     setSummary("");
 
     try {
-      const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      // Use environment variable for production backend, fallback to localhost for development
+      const backendUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:5000" : "");
+      
+      if (!backendUrl) {
+        setError("Backend API is not configured. Please set VITE_API_URL environment variable.");
+        setLoading(false);
+        return;
+      }
+      
       const response = await fetch(`${backendUrl}/api/summarize`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -92,7 +100,7 @@ function ScraperTool() {
         setError(data.error || "Something went wrong. Make sure the backend is running.");
       }
     } catch (err) {
-      setError("Failed to connect to the backend. Please ensure the server is running on localhost:5000.");
+      setError("Failed to connect to the backend API. Please ensure the backend server is running and accessible.");
     } finally {
       setLoading(false);
     }
