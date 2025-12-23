@@ -618,8 +618,8 @@ export default function Portfolio() {
               I love shipping reliable APIs, efficient data pipelines, and experiments that actually move the needle.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a href="#experience" className="px-4 py-2 rounded-xl bg-white text-black font-semibold hover:opacity-90">Experience</a>
-              <a href="#projects" className="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40">See Projects</a>
+              <button onClick={() => scrollToId("experience")} className="px-4 py-2 rounded-xl bg-white text-black font-semibold hover:opacity-90">Experience</button>
+              <button onClick={() => scrollToId("projects")} className="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40">See Projects</button>
             </div>
             <div className="mt-6"><Pill>FastAPI</Pill><Pill>MongoDB</Pill><Pill>WebSockets</Pill><Pill>Python</Pill><Pill>C++</Pill><Pill>OpenCV</Pill><Pill>AWS</Pill></div>
           </motion.div>
