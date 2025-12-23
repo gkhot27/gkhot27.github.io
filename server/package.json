@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js",
-    "build": "echo 'No build step required'"
+    "build": "node -e \"console.log('Build complete'); process.exit(0);\""
   },
   "dependencies": {
     "axios": "^1.7.9",
