@@ -9,32 +9,54 @@ dotenv.config();
 
 const app = express();
 
-// Update CORS to allow your portfolio domain, local development, and Render
+// Update CORS to allow your portfolio domain and local development
 const allowedOrigins = [
   'http://localhost:5173',
   'https://gkhot27.github.io',
-  'https://gkhot27-github-io-2.onrender.com' // Render backend URL (if different, update this)
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
+    // Allow requests with no origin (like mobile apps or curl requests) - useful for health checks
     if (!origin) return callback(null, true);
     
+    // Allow requests from allowed origins
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
+      // Log the origin for debugging
+      console.log('CORS blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
-  }
+  },
+  credentials: true
 }));
 
 app.use(express.json());
+
+// Root endpoint for testing
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Portfolio Backend API',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      summarize: '/api/summarize (POST)'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Health check endpoint for Render
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// Validate OpenAI API key is set
+if (!process.env.OPENAI_API_KEY) {
+  console.warn('⚠️  WARNING: OPENAI_API_KEY environment variable is not set!');
+  console.warn('   The /api/summarize endpoint will not work without it.');
+}
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -45,6 +67,13 @@ app.post('/api/summarize', async (req, res) => {
 
   if (!url) {
     return res.status(400).json({ error: 'URL is required' });
+  }
+
+  // Check if OpenAI API key is configured
+  if (!process.env.OPENAI_API_KEY) {
+    return res.status(500).json({ 
+      error: 'OpenAI API key is not configured. Please set OPENAI_API_KEY environment variable.' 
+    });
   }
 
   try {
