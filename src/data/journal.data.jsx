@@ -2,11 +2,11 @@ export const journalEntries = [
   {
     date: "December 29, 2025",
     title: "Week 1 of the 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents' course",
-    category: "Machine Learning",
+    category: "Learning",
     content: `In Week 1, I explored how large language models like GPT and Llama can be applied to real business use cases such as content creation and technical documentation. I focused on experimenting through prototyping in a notebook environment and improved my prompting skills by building a tool that answers technical questions. The week emphasized learning through experimentation, community collaboration, and set the stage for upcoming challenges like building a brochure generator and a personalized AI tutor.`,
     tags: ["LLM", "Prompt Engineering", "GPT", "Llama", "AI Applications"],
   },
-  
+
   {
     date: "December 17, 2025",
     title: "AI Web Scraper & Summarizer",
