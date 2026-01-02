@@ -491,14 +491,14 @@ const backendProjects = [
     description:
       "Python + Zapier glue to parse transactions, match invoices, and push to QuickBooks.",
     stack: ["Python", "Zapier", "QuickBooks API"],
-    link: "https://github.com/yourusername/invoice-automation", // <- put your repo/demo URL
+    link: "https://github.com/gkhot27", // <- put your repo/demo URL
   },
   {
     title: "Auth & RBAC Microservice",
     description:
       "Centralized auth with JWT refresh flow, role-based access, and audit trails.",
     stack: ["FastAPI", "PostgreSQL", "JWT", "Docker"],
-    link: "https://github.com/yourusername/auth-rbac-service", // <- put your repo/demo URL
+    link: "https://github.com/gkhot27", // <- put your repo/demo URL
   },
 
 ];
@@ -509,64 +509,98 @@ const deepLearningProjects = [
     description:
       "Streaming webcam inference with async preprocessing, custom NMS, and a lightweight metrics panel.",
     stack: ["Python", "PyTorch", "YOLO", "OpenCV"],
-    link: "https://github.com/yourusername/realtime-yolo-opencv", // <- repo or demo URL
+    link: "https://github.com/gkhot27", // <- repo or demo URL
   },
   {
     title: "Pac-Man Agent (Reinforcement Learning)",
     description:
       "DQN-style agent with replay buffer, epsilon-greedy exploration, and target network updates.",
     stack: ["Python", "RL", "PyGame", "NumPy"],
-    link: "https://github.com/yourusername/pacman-dqn", // <- repo or demo URL
+    link: "https://github.com/gkhot27", // <- repo or demo URL
   },
 ];
 
 // ---- Machine Learning projects data ----
 const machineLearningProjects = [
   {
-    title: "Churn Prediction",
+    title: "Dog Breed Classification and Condition Prediction for a shelter",
     description:
-      "Feature engineering + model comparison (LogReg, RandomForest, XGBoost) with SHAP explainability.",
-    stack: ["Python", "scikit-learn", "XGBoost", "SHAP"],
-    link: "https://github.com/yourusername/churn-prediction", // <- repo or demo URL
+      "Machine learning course project using Jupyter notebooks to model and compare approaches for predicting breed-related conditions, including feature engineering/selection and performance tracking across experiments.",
+    stack: ["Python", "Jupyter Notebook", "pandas", "NumPy", "scikit-learn", "Matplotlib"],
+    link: "https://github.com/jweste25/cosc325-course-project",
   },
   {
-    title: "Time-Series Forecasting",
+    title: "Retinal OCT Disease Classification",
     description:
-      "Seasonal decomposition, Prophet baseline, and LightGBM for competitive short-term forecasts.",
-    stack: ["Pandas", "Prophet", "LightGBM"],
-    link: "https://github.com/yourusername/ts-forecasting", // <- repo or demo URL
+      "Deep learning project exploring convolutional neural network classification of retinal OCT (Optical Coherence Tomography) scans to distinguish between retinal disease patterns in medical images.",
+    stack: ["Python", "Jupyter Notebook", "CNN", "Medical Image Classification"],
+    link: "https://github.com/gkhot27/Retinal_OCT_project",
   },
 ];
 // ---- Computer Vision projects data ----
 const computerVisionProjects = [
   {
-    title: "Lighting‑Robust Color Detection",
+    title: "HighHeat Baseball Analytics",
     description:
-      "HSV thresholds + normalization + CLAHE for stable tracking under exposure shifts.",
-    stack: ["OpenCV", "Python", "HSV/LAB", "CLAHE"],
-    link: "https://github.com/yourusername/lighting-robust-color-detection", // <- repo or demo URL
+      "End-to-end computer vision pipeline for baseball pitch/ball tracking and analytics, built around a YOLOv8 + Roboflow workflow.",
+    stack: ["Python", "OpenCV", "YOLOv8", "Roboflow", "Computer Vision"],
+    link: "https://github.com/utk-cs340-fall25/HighHeat",
   },
   {
     title: "Image Differencing & Motion Masks",
     description:
       "Background subtraction (MOG2/KNN) with morphological operations to highlight changes.",
     stack: ["OpenCV", "Python", "MOG2", "KNN", "MorphOps"],
-    link: "https://github.com/yourusername/image-differencing-motion", // <- repo or demo URL
+    link: "https://github.com/gkhot27", // <- repo or demo URL
   },
   {
     title: "Edge Maps & Segmentation",
     description:
       "Canny/Sobel edges and GrabCut/Watershed for region separation and object extraction.",
     stack: ["OpenCV", "Canny", "Sobel", "GrabCut", "Watershed"],
-    link: "https://github.com/yourusername/edges-and-segmentation", // <- repo or demo URL
+    link: "https://github.com/gkhot27", // <- repo or demo URL
   },
   {
     title: "Classical → DL Bridge",
     description:
       "Denoise/normalize/resize pipelines feeding clean inputs to CNN/YOLO detectors.",
     stack: ["OpenCV", "NumPy", "PyTorch", "YOLO"],
-    link: "https://github.com/yourusername/classical-to-dl-bridge", // <- repo or demo URL
+    link: "https://github.com/gkhot27", // <- repo or demo URL
   },
+];
+
+// ---- Data Structures & Algorithms projects data ----
+const dataStructuresAlgorithmsProjects = [
+  // Add your DSA projects here
+  // {
+  //   title: "Example DSA Project",
+  //   description: "Description of your DSA project",
+  //   stack: ["C++", "Python", "Data Structures"],
+  //   link: "https://github.com/yourusername/dsa-project",
+  // },
+  {
+    title: "Dijkstra’s Shortest Path Algorithm",
+    description:
+      "Graph algorithm implementation of Dijkstra’s shortest path using priority queues to efficiently compute minimum distances from a source node.",
+    stack: ["C++", "Graphs", "Priority Queue", "Algorithms"],
+    link: "https://github.com/shivarn05/Project-4/tree/main/proj4",
+  },
+  {
+    title: "Pac-Man Data Structures Game",
+    description:
+      "Built a Pac-Man style game in Python that applies core data structures (grids, queues/priority queues, state tracking) to handle movement, collisions, scoring, and game-state logic.",
+    stack: ["Python", "Data Structures", "Game Development", "2D Grid/Graph Logic"],
+    link: "https://github.com/ruspatel05/CS302-FinalProject",
+  },
+  {
+    title: "UNO Game (C++)",
+    description:
+      "Terminal-based UNO game implemented in C++ with multi-player support (2–6 players) and core UNO rules including skip/reverse, +2, wild, and wild +4, plus UNO-call penalty handling.",
+    stack: ["C++", "OOP", "Game Logic", "Terminal App"],
+    link: "https://github.com/Tiredabee/UnoLab",
+  }
+  
+  
 ];
 
 
@@ -637,7 +671,7 @@ export default function Portfolio() {
       </Section>
 
       {/* ====== PROJECTS GRID ====== */}
-      <Section id="projects" title="Projects" subtitle="A few highlights from my recent work">
+      <Section id="projects" title="Projects" subtitle="A few highlights from my recent work (please contact me if you can't find any projects or want to learn more about any of them)">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <button type="button" onClick={() => scrollToId("deep-learning")} className="group p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition text-left">
             <div className="text-cyan-300 font-semibold">Deep Learning</div>
@@ -657,6 +691,11 @@ export default function Portfolio() {
           <button type="button" onClick={() => scrollToId("computer-vision")} className="group p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition text-left">
             <div className="text-amber-300 font-semibold">Computer Vision</div>
             <p className="text-sm text-white/70 mt-2">Lighting-robust color detection, edges, segmentation.</p>
+            <div className="mt-4 text-xs text-white/50 group-hover:text-white/80">Jump to section →</div>
+          </button>
+          <button type="button" onClick={() => scrollToId("data-structures-algorithms")} className="group p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition text-left">
+            <div className="text-rose-300 font-semibold">Data Structures & Algorithms</div>
+            <p className="text-sm text-white/70 mt-2">Algorithm implementations, problem-solving, and data structure designs.</p>
             <div className="mt-4 text-xs text-white/50 group-hover:text-white/80">Jump to section →</div>
           </button>
         </div>
@@ -775,6 +814,45 @@ export default function Portfolio() {
       >
         <div className="grid md:grid-cols-2 gap-6">
           {computerVisionProjects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-semibold">{proj.title}</h3>
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-white/20 hover:border-white/40 text-emerald-300 hover:text-emerald-200"
+                    title="Open project"
+                  >
+                    View <ExternalLinkIcon />
+                  </a>
+                )}
+              </div>
+              <p className="text-sm text-white/70 mt-2">{proj.description}</p>
+              <div className="mt-3 text-xs text-white/60 flex flex-wrap gap-2">
+                {proj.stack.map((s) => (
+                  <span key={s} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ====== DATA STRUCTURES & ALGORITHMS ====== */}
+      <Section
+        id="data-structures-algorithms"
+        title="Data Structures & Algorithms"
+        subtitle="Algorithm implementations, problem-solving, and data structure designs"
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          {dataStructuresAlgorithmsProjects.map((proj, idx) => (
             <div
               key={idx}
               className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[.08] transition"
