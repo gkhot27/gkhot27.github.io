@@ -1,5 +1,30 @@
 export const journalEntries = [
   {
+    date: "January 6, 2026",
+    title: "Week 2 of the 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents'",
+    category: "Learning",
+    content: `
+  This week in the AI Engineer Core Track, I spent most of my time building hands-on AI applications using Gradio. One of the coolest parts was realizing how easy it is to create and deploy a working website without any frontend experience. I built and deployed a live chatbot using Hugging Face, which helped me understand the full process from idea to deployment.
+
+I learned how to build interactive chat and data science UIs, use callbacks, stream LLM responses, and format outputs with Markdown. I also experimented with using different models like GPT and Claude, and got an introduction to system prompts, multi-shot prompting, and RAG. Toward the end of the week, I covered how LLM tool calling and agent workflows actually work, which made the whole system feel a lot less “magical” and more practical.
+
+Fun to build and definitely something I want to keep improving.
+
+Feel free to check out the live site here: https://gkhot-raj-chatbot.hf.space/
+    `,
+    tags: [
+      "LLM",
+      "Gradio",
+      "Hugging Face",
+      "AI Projects",
+      "Prompt Engineering",
+      "Chatbots",
+      "RAG",
+      "AI Agents"
+    ]
+  }
+  ,
+  {
     date: "December 29, 2025",
     title: "Week 1 of the 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents' course",
     category: "Learning",
