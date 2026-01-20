@@ -69,6 +69,13 @@ Feel free to check out the live site here: https://gkhot-raj-chatbot.hf.space/
     tags: ["OpenCV", "Python", "Color Detection", "Image Processing"],
   },
   {
+    date: "November 11, 2025",
+    title: "Discovering and Working Through the OpenCV (cv2) Library in Python",
+    category: "Computer Vision",
+    content: `Learned and applied core computer vision techniques using the OpenCV (cv2) library in Python. Implemented image preprocessing pipelines including grayscale conversion, thresholding, and filtering. Applied edge detection methods such as Canny and Sobel, performed image segmentation using contours and masking, and worked with morphological operations to improve feature extraction. for reference, I used this tutorial: https://www.youtube.com/watch?v=eDIj5LuIL4A`,
+    tags: ["OpenCV", "cv2", "Image Processing", "Edge Detection", "Image Segmentation", "Python"],
+  },
+  {
     date: "November 10, 2025",
     title: "Exploring WebSockets for Real-time Data",
     category: "Backend",
