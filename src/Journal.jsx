@@ -183,7 +183,14 @@ function JournalCard({ entry, index }) {
         </span>
       </div>
       
-      <p className="text-sm text-white/80 leading-relaxed mb-4">{entry.content}</p>
+      {entry.useHtml ? (
+        <div
+          className="journal-content text-sm text-white/80 leading-relaxed mb-4 [&_a]:text-blue-400 [&_a]:underline [&_a]:hover:text-blue-300 [&_a]:transition-colors"
+          dangerouslySetInnerHTML={{ __html: entry.content.trim() }}
+        />
+      ) : (
+        <p className="text-sm text-white/80 leading-relaxed mb-4 whitespace-pre-line">{entry.content}</p>
+      )}
       
       <div className="flex flex-wrap gap-2">
         {entry.tags.map((tag) => (
@@ -206,9 +213,16 @@ export default function Journal() {
 
   const [selectedCategory, setSelectedCategory] = useState("All");
   const categories = ["All", ...Object.keys(categoryColors)];
-  const filteredEntries = selectedCategory === "All" 
-    ? journalEntries 
-    : journalEntries.filter((e) => e.category === selectedCategory);
+
+  const parseEntryDate = (dateStr) => {
+    const normalized = dateStr.replace(/(\d+)(st|nd|rd|th)/i, "$1");
+    return new Date(normalized);
+  };
+
+  const filteredEntries = (selectedCategory === "All"
+    ? [...journalEntries]
+    : journalEntries.filter((e) => e.category === selectedCategory)
+  ).sort((a, b) => parseEntryDate(b.date) - parseEntryDate(a.date));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#0b0f1a] to-black text-white">
