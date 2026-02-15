@@ -64,6 +64,22 @@ const EXPERIENCES = [
   },
 
   {
+    company: "Personal Project (Student)",
+    title: "Multi-Tenant API",
+    period: "2025",
+    bullets: [
+      "Built an enterprise-style multi-tenant API with ASP.NET Core 8 and EF Core 8 using single-database row-level isolation and global query filters.",
+      "Implemented tenant resolution from JWT (tenant_id claim) and X-TenantId header, with middleware rejecting requests without a valid tenant.",
+      "Learned auth patterns: JWT with TenantUser/Admin roles, AdminOnly policy, and admin endpoints using IgnoreQueryFilters() for cross-tenant access.",
+      "Added soft delete (IsDeleted + query filter) and ensured TenantId is set on new entities in SaveChanges for secure, tenant-scoped writes.",
+      "Wrote integration tests for tenant isolation, admin cross-tenant queries, and soft delete behavior; documented the design and flow in a blog post.",
+    ],
+    tech: ["C#", "ASP.NET Core 8", "EF Core 8", "SQL Server / SQLite", "JWT", "Multi-tenancy"],
+    repo: "https://github.com/gkhot27/Multi-tenant-application",
+    blog: "https://www.notion.so/Multi-tenancy-applications-308cad58afd980dfb1c4e8bcbad19174?source=copy_link",
+  },
+
+  {
     company: "Baskin Robbins",
     title: "Sales Associate",
     period: "Jan 2022 - Apr 2022",
@@ -276,6 +292,20 @@ function ExperienceSlider() {
                     </span>
                   ))}
                 </div>
+                {(exp.repo || exp.blog) && (
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                    {exp.repo && (
+                      <a href={exp.repo} target="_blank" rel="noreferrer" className="px-2 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 hover:bg-cyan-500/30">
+                        View repo
+                      </a>
+                    )}
+                    {exp.blog && (
+                      <a href={exp.blog} target="_blank" rel="noreferrer" className="px-2 py-1 rounded bg-white/10 text-white/90 border border-white/20 hover:bg-white/20">
+                        Read blog
+                      </a>
+                    )}
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
