@@ -1,6 +1,6 @@
 export const journalEntries = [
   {
-    date: "February 20th, 2026",
+    date: "February 14th, 2026",
     title: "CS 365 Object Oriented Programming and Why It’s My Favorite Class",
     category: "Learning",
     useHtml: true,
